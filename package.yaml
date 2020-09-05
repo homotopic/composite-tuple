@@ -1,0 +1,30 @@
+name:                composite-tuple
+version:             0.1.0.0
+git:                 https://gitlab.com/homotopic-tech/composite-tuple
+license:             MIT
+author:              "Daniel Firth"
+maintainer:          "dan.firth@homotopic.tech"
+copyright:           "2020 Daniel Firth"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Tuple functions for composite records.
+category:            Data Structures
+
+description:         Tuple functions for composite records.
+
+dependencies:
+- base >= 4.7 && < 5
+- composite-base
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
