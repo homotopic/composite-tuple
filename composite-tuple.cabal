@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           composite-tuple
-version:        0.1.0.0
+version:        0.1.1.0
 synopsis:       Tuple functions for composite records.
 description:    Tuple functions for composite records.
 category:       Data Structures
