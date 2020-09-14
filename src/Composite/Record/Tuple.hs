@@ -9,7 +9,8 @@
 Tuple functions for composite records, inspired by relude.
 -}
 module Composite.Record.Tuple (
-  toFst
+  singleton
+, toFst
 , toSnd
 , fmapToFst
 , fmapToSnd
@@ -20,6 +21,10 @@ module Composite.Record.Tuple (
 ) where
 
 import Composite.Record
+
+-- | Put a single value in a record.
+singleton :: a -> Record (s :-> a : '[])
+singleton a = a :*: RNil
 
 -- | Apply a function, with the result in the fst slot, and the value in the other.
 toFst :: (a -> b) -> a -> Record (s :-> b : s' :-> a : '[])
