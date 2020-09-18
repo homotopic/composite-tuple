@@ -1,6 +1,7 @@
-{-# LANGUAGE DataKinds     #-}
-{-# LANGUAGE GADTs         #-}
-{-# LANGUAGE TypeOperators #-}
+{-# LANGUAGE DataKinds       #-}
+{-# LANGUAGE GADTs           #-}
+{-# LANGUAGE PatternSynonyms #-}
+{-# LANGUAGE TypeOperators   #-}
 {- |
    Module     : Composite.Record.Tuple
    License    : MIT
@@ -10,6 +11,7 @@ Tuple functions for composite records, inspired by relude.
 -}
 module Composite.Record.Tuple (
   singleton
+, pattern (:|:)
 , toFst
 , toSnd
 , fmapToFst
@@ -25,6 +27,10 @@ import Composite.Record
 -- | Put a single value in a record.
 singleton :: a -> Record (s :-> a : '[])
 singleton a = a :*: RNil
+
+-- | Pattern for a pair in a record
+pattern (:|:) :: a -> b -> Record (s :-> a : s' :-> b : '[])
+pattern a :|: b = a :*: b :*: RNil
 
 -- | Apply a function, with the result in the fst slot, and the value in the other.
 toFst :: (a -> b) -> a -> Record (s :-> b : s' :-> a : '[])

@@ -1,5 +1,9 @@
 # Changelog for composite-tuple
 
+## (v0.1.2.0)
+
+* Add `pattern (:|:)`.
+
 ## (v0.1.1.0)
 
 * Add `singleton`.
