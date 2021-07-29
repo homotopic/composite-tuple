@@ -1,3 +1,6 @@
-resolver: nightly-2020-08-27
+resolver: lts-18.4
 packages:
 - .
+extra-deps:
+- composite-base-0.7.5.0
+allow-newer: true
